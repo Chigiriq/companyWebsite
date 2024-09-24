@@ -1,3 +1,4 @@
+from typing import Any
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
@@ -15,8 +16,19 @@ class AboutPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["contact_adress"] = "123 Main Street"
+        context["contact_address"] = "123 Main Street"
         context["phone_number"] = "555-555-5555"
         return context
     
-#XXX make this 
+class ProductPageView(TemplateView):
+    template_name = "products.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        context = {
+            "product_list": ["p1", "p2", "p3", "p4"]
+        }
+        return context
+    
+    

@@ -2,9 +2,9 @@
 
 {% block content %}
 <h1>Products or something idk</h1>
-<p>There are {{ inventory_list|length }} items of inventory</p>
+<p>There are {{ product_list|length }} items of inventory</p>
 <url>
-    {% for item in inventory_list %}
+    {% for item in product_list %}
     <li>{{ item }}</li>
     {% endfor %}
 </url>
